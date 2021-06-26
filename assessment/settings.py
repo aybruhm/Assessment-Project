@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ac^k4i^#wchx66ceh3a65rbbc3^13!1xwgcjv818z4-=rvp(cl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'assessment-endpoint.herokuapp.com']
 
 
 # Application definition
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
