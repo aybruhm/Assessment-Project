@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.contrib.auth import login, authenticate, logout
 from endpoint.forms import UserCreateForm, UserLoginForm
 from django.views.decorators.csrf import csrf_exempt
@@ -14,8 +15,10 @@ def _register(request):
         if form.is_valid():
             form.save()
             return HttpResponse("You have successfully registered a user!")
+
         return HttpResponse(f"{form.error_messages}")
 
+    # return render(request, "endpoint/register.html", {"form": form})
     return HttpResponse("Register Now...")
 
 
@@ -34,7 +37,7 @@ def _login(request):
             if user is not None:
                 login(request, user)
                 return HttpResponse(f"{email}: you have successfully logged in!")
-        return HttpResponse(f"{form.errors}")
+        return HttpResponse(f"{form.error_messages}")
 
     return HttpResponse("Login Now...")
 
