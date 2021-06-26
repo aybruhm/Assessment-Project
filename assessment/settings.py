@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'endpoint.apps.EndpointConfig'
 ]
 
+AUTH_USER_MODEL = "endpoint.User"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
