@@ -36,8 +36,8 @@ def _register(request):
 
         return HttpResponse(f"{form.error_messages}")
 
-    return render(request, "endpoint/register.html", {"form": form})
-    # return HttpResponse("Register Now...")
+    # return render(request, "endpoint/register.html", {"form": form})
+    return HttpResponse("Register Now...")
 
 
 @csrf_exempt
