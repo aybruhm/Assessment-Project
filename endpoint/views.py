@@ -5,6 +5,9 @@ from endpoint.forms import UserCreateForm, UserLoginForm
 from django.views.decorators.csrf import csrf_exempt
 
 
+def _home(request):
+    return render(request, "endpoint/home.html")
+
 @csrf_exempt
 def _register(request):
     form = UserCreateForm()
